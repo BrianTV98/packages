@@ -89,4 +89,22 @@ extension GoRouterHelper on BuildContext {
         queryParams: queryParams,
         extra: extra,
       );
+  
+   /// Push a location onto the page stack.
+  Future<dynamic> pushAsync(String location, {Object? extra}) =>
+      GoRouter.of(this).pushAsync(location, extra: extra);
+
+  /// Navigate to a named route onto the page stack.
+  Future<dynamic> pushNamedAsync(
+      String name, {
+        Map<String, String> params = const <String, String>{},
+        Map<String, String> queryParams = const <String, String>{},
+        Object? extra,
+      }) =>
+      GoRouter.of(this).pushNamedAsync(
+        name,
+        params: params,
+        queryParams: queryParams,
+        extra: extra,
+      );
 }
